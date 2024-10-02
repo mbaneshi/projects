@@ -1,0 +1,12 @@
+[submodule "haftkhan"]
+	path = haftkhan
+	url = https://github.com/mbaneshi/haftkhan
+[submodule "caddy"]
+	path = caddy
+	url = https://github.com/mbaneshi/caddy_
+[submodule "shahab"]
+	path = shahab
+	url = https://github.com/mbaneshi/shahabbaneshi
+[submodule "blog"]
+	path = blog
+	url = https://github.com/mbaneshi/blog

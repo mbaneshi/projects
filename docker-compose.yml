@@ -1,0 +1,53 @@
+services:
+  caddy:
+    container_name: caddy
+    image: caddy
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - internal_docker_net
+
+  haftkhan_backend:
+    build:
+      context: ./haftkhan/backend
+    container_name: haftkhan_backend
+    networks:
+      - internal_docker_net
+
+
+
+  blog:
+    build:
+      context: ./blog
+    container_name: blog
+    networks:
+      - internal_docker_net
+
+
+  shahab:
+    build:
+      context: ./shahab
+    container_name: shahab
+    networks:
+      - internal_docker_net
+
+  haftkhan_frontend:
+    build:
+      context: ./haftkhan/frontend
+    container_name: haftkhan_frontend
+    networks:
+      - internal_docker_net
+
+volumes:
+  caddy_data:
+  caddy_config:
+
+networks:
+  internal_docker_net:
+    driver: bridge
+
